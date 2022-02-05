@@ -7,6 +7,7 @@
 import CoreAudio
 import Foundation
 import os.log
+@_implementationOnly import SimplyCoreAudioC
 
 /// This class represents an audio device managed by [Core Audio](https://developer.apple.com/documentation/coreaudio).
 ///
@@ -202,6 +203,14 @@ private func propertyListener(objectID: UInt32,
         ]
 
         notificationCenter.post(name: .deviceMuteDidChange, object: obj, userInfo: userInfo)
+
+    case kAudioObjectPropertyElementMain:
+        let userInfo: [AnyHashable: Any] = [
+            "channel": address.mElement,
+            "scope": Scope.from(address.mScope),
+        ]
+
+        notificationCenter.post(name: .deviceBalanceDidChange, object: obj, userInfo: userInfo)
     case kAudioDevicePropertyDeviceIsAlive:
         notificationCenter.post(name: .deviceIsAliveDidChange, object: obj)
     case kAudioDevicePropertyDeviceIsRunning:

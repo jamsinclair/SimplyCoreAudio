@@ -165,6 +165,7 @@ To install the Swift Package, please follow the steps below:
 | `deviceNameDidChange` | Called whenever the audio device's name changes. |
 | `deviceOwnedObjectsDidChange` | Called whenever the list of owned audio devices on this audio device changes. | N/A |
 | `deviceVolumeDidChange` | Called whenever the audio device's volume for a given channel and scope changes. | `channel: UInt32`, `scope: Scope` |
+| `deviceBalanceDidChange` | Called whenever the audio device's balance for a given channel and scope changes. | `channel: UInt32`, `scope: Scope` |
 | `deviceMuteDidChange` | Called whenever the audio device's mute state for a given channel and scope changes. | `channel: UInt32`, `scope: Scope` |
 | `deviceIsAliveDidChange` | Called whenever the audio device's list of nominal sample rates changes. | N/A |
 | `deviceIsRunningDidChange` | Called whenever the audio device's *is running* property changes. | N/A |

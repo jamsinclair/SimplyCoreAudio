@@ -58,6 +58,11 @@ public extension Notification.Name {
     /// Returned `userInfo` object will contain the keys `channel` and `scope`.
     static let deviceMuteDidChange = Self("deviceMuteDidChange")
 
+    /// Called whenever the audio device's balance for a given scope changes.
+    ///
+    /// Returned `userInfo` object will contain the keys `channel` and `scope`.
+    static let deviceBalanceDidChange = Self("deviceVBalanceDidChange")
+
     /// Called whenever the audio device's *is alive* property changes.
     static let deviceIsAliveDidChange = Self("deviceIsAliveDidChange")
 
